@@ -39,7 +39,6 @@ const app = express();
 // req.body undefined" bugs.
 
 
-import cors from "cors";
 
 app.use(
   cors({
