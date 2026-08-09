@@ -39,11 +39,17 @@ const app = express();
 // req.body undefined" bugs.
 
 
-app.use(cors({
-  origin: 'http://localhost:5173', // your Vite dev server
-  credentials: true, // harmless here since we use Bearer tokens, not cookies — but fine to include
-}))
+import cors from "cors";
 
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://expense-app-theta-six.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
