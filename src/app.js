@@ -23,7 +23,7 @@ import authRoutes from './modules/auth/auth.routes.js';
 import categoryRoutes from './modules/categories/category.routes.js';
 import expenseRoutes from './modules/expenses/expense.routes.js';
 import cors from 'cors'
-
+import mongoose from 'mongoose';
 
 const app = express();
 
