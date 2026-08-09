@@ -63,8 +63,11 @@ app.use(morgan('dev'));
 // module. Its purpose: let us (or a deployment platform, or a
 // monitoring tool) verify the server process is alive and responding,
 // separate from whether the database connection is healthy.
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok' });
+app.get('/api/health', async (req, res) => {
+  res.json({
+    status: 'ok',
+    mongo: mongoose.connection.readyState,
+  });
 });
 
 // --- Feature Routes ---
